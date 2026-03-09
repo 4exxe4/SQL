@@ -6,3 +6,5 @@ EXEC sp_SelectScheduleFor N'PV_521'
 --PRINT dbo.GetNextLearningDay(N'PV_521',DEFAULT);
 PRINT dbo.GetNextLearningDay(N'PV_521',N'2026-03-05');
 PRINT dbo.GetNextLearningDate(N'VPU_311',N'2026-03-08');
+PRINT dbo.GetSummertimeSadness(2025);
+PRINT dbo.GetEasterDate(2025);
