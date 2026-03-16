@@ -1,4 +1,4 @@
---SQLQuery1-  sp SELECT Schedule for group.sql
+п»ї--SQLQuery1-  sp SELECT Schedule for group.sql
 USE PV_521_Import;
 SET DATEFIRST 1;
 GO 
@@ -8,13 +8,13 @@ AS
 BEGIN
 	DECLARE @group_id AS INT	 = (SELECT group_id FROM Groups WHERE group_name LIKE @group);
 	SELECT
-			[Группа]	 = group_name,
-			[Дисциплина] = discipline_name,
-			[Дата]		 = [date],
-			[Время]		 = [time],
-			[День]		 = DATENAME (WEEKDAY, [date]),
-			[Препод]	 = FORMATMESSAGE(N'%s %s %s', last_name, first_name, middle_name),
-			[Статус]	 = IIF(spent = 1, N'Проведено', N'Запланировано')
+			[Р“СЂСѓРїРїР°]	 = group_name,
+			[Р”РёСЃС†РёРїР»РёРЅР°] = discipline_name,
+			[Р”Р°С‚Р°]		 = [date],
+			[Р’СЂРµРјСЏ]		 = [time],
+			[Р”РµРЅСЊ]		 = DATENAME (WEEKDAY, [date]),
+			[РџСЂРµРїРѕРґ]	 = FORMATMESSAGE(N'%s %s %s', last_name, first_name, middle_name),
+			[РЎС‚Р°С‚СѓСЃ]	 = IIF(spent = 1, N'РџСЂРѕРІРµРґРµРЅРѕ', N'Р—Р°РїР»Р°РЅРёСЂРѕРІР°РЅРѕ')
 	FROM	Schedule, Groups, Teachers, Disciplines
 	WHERE	[group]		 = group_id
 	AND		[group]		 = @group_id
